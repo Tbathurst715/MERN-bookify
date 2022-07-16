@@ -14,8 +14,14 @@ import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 
 const SavedBooks = () => {
-  const { loading, data } = useQuery(GET_ME);
-  const [deleteBook] = useMutation(REMOVE_BOOK);
+  const { loading, data, error: err } = useQuery(GET_ME);
+  if (err) {
+    console.log(JSON.stringify(err));
+  }
+  const [deleteBook, { error }] = useMutation(REMOVE_BOOK);
+  // if (error) {
+  //   console.log(JSON.stringify(error));
+  // }
   const userData = data?.me || {};
 
   if (!userData?.username) {
@@ -94,7 +100,11 @@ const SavedBooks = () => {
                   <p className="small">Authors: {book.authors}</p>
                   {book.link ? (
                     <Card.Text>
-                      <a href={book.link} target="_blank">
+                      <a
+                        href={book.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         More Information on Google Books
                       </a>
                     </Card.Text>
