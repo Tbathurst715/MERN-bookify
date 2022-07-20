@@ -23,7 +23,7 @@ SO THAT I can keep a list of books to purchase
 git@github.com:addiguskey/MERN-bookify.git
 ```
 
-2. This app uses graph-QL and mongoDB. You can simply install npm libraries used in this application by running "npm i" on your Integrated Terminal in VS_Code.
+2. This app uses React, graph-QL and mongoDB. You can simply install npm libraries used in this application by running "npm i" on your Integrated Terminal in VS_Code.
 
 3. Once installed, in Terminal run "npm run seed" then "npm run start" to run the application on your local machine.
 
